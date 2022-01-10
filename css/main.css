@@ -1,4 +1,5 @@
-
+/* Custom Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Neucha&display=swap');
 
 /* ROOT values */
 :root{
@@ -13,16 +14,36 @@
     box-sizing: border-box;
     transition: all .2s linear;
     text-decoration: none;
-    text-transform: capitalize;
+    color: var(--mainWhite);
+    border: none;
+}
+::selection{
+    background-color: royalblue;
     color: var(--mainWhite);
 }
+
+html::-webkit-scrollbar{
+    width: 1.5rem;
+}
+
+html::-webkit-scrollbar-track{
+    background-color: var(--mainWhite);
+    border-radius: 5px;
+    box-shadow: inset 0 0 3px #ccc;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: var(--mainColor);
+    border-radius: 5px;
+}
+
 html{
     font-size: 63.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
 section{
-    padding: 2rem 7%;
+    padding: 0;
+    min-height: 50vh;
 }
 
 /* HEADER */
@@ -33,7 +54,7 @@ header{
     box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
     display: block;
     background: var(--gradient);
-    box-shadow: 0 5px 5px #ccc;
+    box-shadow: 0 2px 3px #444;
 }
 
 /* HEADING */
@@ -69,7 +90,7 @@ header .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%;
+    padding: 0.5rem 4%;
     margin: 0;
     width: 100%;
 }
@@ -101,15 +122,113 @@ header .navbar{
     color: var(--navHoverColor);
 }
 
-
-.dropdown-menu-active{
-    display: initial;
+/* About section */
+.about{
+    background: url('../images/about_atayev.JPG');
+    background-position: center bottom;
+    background-size: cover;
+    background-attachment: local;
+    background-repeat: no-repeat;
+    height: 150vh;
+    margin-top: 15vh;
+    position: relative;
 }
+.content{
+    position: absolute;
+    top: 13%;
+    left: 11%;
+    width: 40%;
+}
+.content h1{
+    font-size: 8rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: 'Neucha', cursive;
+}
+.content p{
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-top: 4rem;
+    letter-spacing: 2px;
+    padding-right: 5rem;
+    width: 80%;
+    text-align: left;
+}
+.content a{
+    font-size: 2rem;
+    padding: 2rem 3rem;
+    background-color: var(--mainWhite);
+    border-radius: 15px;
+    color: var(--mainColor);
+    margin-top: 4rem;
+    font-weight: bold;
+    text-decoration: none;
+    outline: none;
+}
+.content a:hover{
+    color: var(--mainWhite);
+    background-color: var(--mainColor);
+    box-shadow: 0 5px 8px #ccc;
+}
+
+
+
+/* FOOTER */
+.footer .box-container{
+    background: var(--gradient);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.footer .box-container .box{
+    width: 20%;
+    margin-bottom: 1rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color: var(--mainWhite);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    color: var(--mainWhite);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color:var(--mainWhite);
+}
+
+.footer .box-container .box a:hover i{
+    padding-right:2rem;
+}
+
+.footer .credit{
+    padding: 1rem;
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    color:var(--mainWhite);
+    border-top: .1rem solid var(--mainWhite);
+    background: var(--gradient);
+}
+
+.footer .credit span{
+    color:var(--mainWhite);
+}
+
+
 
 /* MEDIA QUERIES */
-@media (min-width: 990.01px) and (max-width: 1200px) {
-    
-}
+
+
 @media (min-width: 768.01px) and (max-width: 990px) {
     html{
         font-size: 58%;
@@ -118,10 +237,13 @@ header .navbar{
         font-size: 1.3rem;
         padding: 1rem 0.75rem;
     }
+    .about{
+        margin-top: 14vh;
+    }
 }
 @media (max-width: 768px) {
     html{
-        font-size: 55%;
+        font-size: 52%;
     }
     header .navbar{
         display: none;
@@ -134,5 +256,34 @@ header .navbar{
     }
     .dropdown:hover>.dropdown-menu {
         display: none;
+    }
+    .about{
+        margin-top: 10vh;
+    }
+    .content{
+        top: 10%;
+        width: 70%;
+    }
+    .footer .box-container .box{
+        width: 50%;
+    }
+}
+@media (max-width: 480px) {
+    .content{
+        top: 12%;
+        width: 80%;
+    }
+    .content h1{
+        font-size: 8rem;
+    }
+    .content p{
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+    .content a{
+        margin-top: 3rem;
+    }
+    .about{
+        background-position: -90rem 0;
     }
 }

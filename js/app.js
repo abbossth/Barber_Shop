@@ -16,8 +16,3 @@ window.onscroll = function () {
     menuEl.classList.remove('fa-times');
     navbarEl.classList.remove('active');
 }
-
-// Dropdown
-dropdownEl.addEventListener('click', function(){
-    dropdownMenuEl.classList.toggle('dropdown-menu-active');
-});
