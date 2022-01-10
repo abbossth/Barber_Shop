@@ -7,13 +7,14 @@
     --mainWhite: #ffffff;
     --navHoverColor: rgb(129, 126, 126);
 }
+
 *{
     margin: 0; padding: 0;
     box-sizing: border-box;
     transition: all .2s linear;
     text-decoration: none;
     text-transform: capitalize;
-    color: #fff;
+    color: var(--mainWhite);
 }
 html{
     font-size: 63.5%;
@@ -23,6 +24,8 @@ html{
 section{
     padding: 2rem 7%;
 }
+
+/* HEADER */
 header{
     position: fixed;
     top:0; left: 0; right: 0;
@@ -30,9 +33,12 @@ header{
     box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
     display: block;
     background: var(--gradient);
+    box-shadow: 0 5px 5px #ccc;
 }
+
+/* HEADING */
 .heading{
-    padding: 0.25rem 9%;
+    padding: 0.25rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,6 +47,7 @@ header{
 .heading .logo, .heading div{
     font-size: 2.5rem;
     color: var(--mainWhite);
+    margin-right: 2rem;
 }
 .heading .tel{
     font-size: 1.5rem;
@@ -52,12 +59,17 @@ header{
 .heading #menu{
     cursor: pointer;
 }
+.fa-times{
+    transform: rotate(180deg);
+}
 
+
+/* NAVBAR */
 header .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 3%;
+    padding: 0.5rem 5%;
     margin: 0;
     width: 100%;
 }
@@ -65,14 +77,15 @@ header .navbar{
 .navbar li{
     text-decoration: none;
     list-style: none;
+    padding: 0.2rem 0;
 }
 .navbar li a{
     text-decoration: none;
     text-transform: uppercase;
     color: var(--mainWhite);
     font-size: 1.5rem;
-    letter-spacing: 2px;
-    padding: 1rem 1.75rem;
+    letter-spacing: 1.5px;
+    padding: 1rem;
 }
 .navbar li a:hover{
     color: var(--navHoverColor);
@@ -86,4 +99,40 @@ header .navbar{
 }
 .dropdown:hover>a{
     color: var(--navHoverColor);
+}
+
+
+.dropdown-menu-active{
+    display: initial;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 990.01px) and (max-width: 1200px) {
+    
+}
+@media (min-width: 768.01px) and (max-width: 990px) {
+    html{
+        font-size: 58%;
+    }
+    .navbar li a{
+        font-size: 1.3rem;
+        padding: 1rem 0.75rem;
+    }
+}
+@media (max-width: 768px) {
+    html{
+        font-size: 55%;
+    }
+    header .navbar{
+        display: none;
+    }
+    header .navbar.active{
+        display: block;
+    }
+    header .navbar li {
+        margin-top: 1rem;
+    }
+    .dropdown:hover>.dropdown-menu {
+        display: none;
+    }
 }

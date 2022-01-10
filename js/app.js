@@ -1,6 +1,9 @@
 // ELEMENTS
 const menuEl = document.querySelector('#menu');
 const navbarEl = document.querySelector('.navbar');
+const dropdownEl = document.querySelector('.dropdown-toggle');
+const dropdownMenuEl = document.querySelector('.dropdown-menu');
+
 
 // MENU
 menuEl.addEventListener('click', function () {
@@ -13,3 +16,8 @@ window.onscroll = function () {
     menuEl.classList.remove('fa-times');
     navbarEl.classList.remove('active');
 }
+
+// Dropdown
+dropdownEl.addEventListener('click', function(){
+    dropdownMenuEl.classList.toggle('dropdown-menu-active');
+});
