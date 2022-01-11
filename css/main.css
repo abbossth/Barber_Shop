@@ -3,7 +3,8 @@
 
 /* ROOT values */
 :root{
-    --gradient: linear-gradient(135deg, #141212, #0f0d0d,#000000);
+    --gradient: linear-gradient(135deg, #000000, #000000,#000000);
+    /* --gradient: linear-gradient(135deg, #141212, #0f0d0d,#000000); */
     --mainColor: #121212;
     --mainWhite: #ffffff;
     --navHoverColor: rgb(129, 126, 126);
