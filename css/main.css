@@ -3,7 +3,7 @@
 
 /* ROOT values */
 :root{
-    --gradient: linear-gradient(135deg, #252121, #1d1919,#110f0f);
+    --gradient: linear-gradient(135deg, #141212, #0f0d0d,#000000);
     --mainColor: #121212;
     --mainWhite: #ffffff;
     --navHoverColor: rgb(129, 126, 126);
@@ -23,13 +23,12 @@
 }
 
 html::-webkit-scrollbar{
-    width: 1.5rem;
+    width: 1.2rem;
 }
 
 html::-webkit-scrollbar-track{
     background-color: var(--mainWhite);
     border-radius: 5px;
-    box-shadow: inset 0 0 3px #ccc;
 }
 html::-webkit-scrollbar-thumb{
     background-color: var(--mainColor);
@@ -284,6 +283,6 @@ header .navbar{
         margin-top: 3rem;
     }
     .about{
-        background-position: -90rem 0;
+        background-position: -75rem 0;
     }
 }
