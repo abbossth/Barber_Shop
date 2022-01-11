@@ -4,8 +4,9 @@
 /* ROOT values */
 :root{
     --gradient: linear-gradient(135deg, #000000, #000000,#000000);
-    /* --gradient: linear-gradient(135deg, #141212, #0f0d0d,#000000); */
-    --mainColor: #121212;
+    --footerBg: linear-gradient(135deg, #141212, #0f0d0d,#000000);
+    --timelineBg: linear-gradient(100deg, #2e2c2c, #1a1818,#0f0f0f);
+    --mainColor: #000000;
     --mainWhite: #ffffff;
     --navHoverColor: rgb(129, 126, 126);
 }
@@ -55,6 +56,7 @@ header{
     display: block;
     background: var(--gradient);
     box-shadow: 0 2px 3px #444;
+    white-space: 10rem;
 }
 
 /* HEADING */
@@ -172,10 +174,91 @@ header .navbar{
 }
 
 
+/* Countries section */
+.countries{
+    background: url('../images/countries_atayev.JPG');
+    background-color: var(--mainColor);
+    background-position: left 8rem;
+    background-size: cover;
+    background-attachment: local;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem 5%;
+}
+.countries .countries-heading{
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid var(--mainWhite);
+}
+.countries .timeline-container{
+    padding: 0 5%;
+    position: relative;
+}
+.countries .timeline-container::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: var(--mainWhite);
+    transform: translateX(-3rem);
+}
+.countries .timeline{
+    position: relative;
+    display: block;
+    background: var(--timelineBg);
+    padding: 1.2rem 1.75rem;
+    width: 50%;
+    margin: 5rem 0;
+    border-radius: 0px 20px 20px 20px;
+}
+.countries .timeline:hover{
+    box-shadow: 6px 8px 8px var(--mainWhite);
+}
+.countries .timeline:hover::after{
+    background-color: var(--mainColor);
+}
+.countries .timeline>p{
+    position: absolute;
+    top: -25px;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+.countries .timeline::after{
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: -3rem;
+    width: 20px;
+    height: 20px;
+    background-color: var(--mainWhite);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid var(--mainWhite);
+}
+.countries .timeline ul{
+    list-style: none;
+}
+.countries .timeline-content .t-date{
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 0;
+}
+.countries .timeline-content .t-title{
+    font-size: 2.5rem;
+}
+.countries .timeline-content .t-location{
+    font-size: 2rem;
+}
+
 
 /* FOOTER */
 .footer .box-container{
-    background: var(--gradient);
+    background: var(--footerBg);
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
@@ -217,7 +300,7 @@ header .navbar{
     font-size: 2rem;
     color:var(--mainWhite);
     border-top: .1rem solid var(--mainWhite);
-    background: var(--gradient);
+    background: var(--footerBg);
 }
 
 .footer .credit span{
@@ -239,6 +322,9 @@ header .navbar{
     }
     .about{
         margin-top: 14vh;
+    }
+    .countries .timeline{
+        width: 65%;
     }
 }
 @media (max-width: 768px) {
@@ -264,6 +350,13 @@ header .navbar{
         top: 10%;
         width: 70%;
     }
+    .countries{
+        background: var(--mainColor);
+    }
+    .countries .timeline{
+        width: 100%;
+    }
+
     .footer .box-container .box{
         width: 50%;
     }
