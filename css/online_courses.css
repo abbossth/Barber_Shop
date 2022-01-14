@@ -1,0 +1,16 @@
+.online_courses{
+    padding: 18vh 0;
+}
+.online_courses h1{
+    color: #fff;
+}
+.online_courses .oc-heading{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid var(--mainWhite);
+    color: var(--mainWhite);
+}
