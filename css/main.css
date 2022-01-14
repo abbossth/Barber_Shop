@@ -1,5 +1,5 @@
 /* Custom Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Yeseva+One&display=swap');
 
 /* ROOT values */
 :root{
@@ -9,6 +9,7 @@
     --mainColor: #000000;
     --mainWhite: #ffffff;
     --navHoverColor: rgb(129, 126, 126);
+    --colorTwo: #6d6d6d;
 }
 
 *{
@@ -16,7 +17,7 @@
     box-sizing: border-box;
     transition: all .2s linear;
     text-decoration: none;
-    color: var(--mainWhite);
+    /* color: var(--mainWhite); */
     border: none;
 }
 ::selection{
@@ -44,7 +45,6 @@ html{
 }
 section{
     padding: 0;
-    min-height: 50vh;
 }
 
 /* HEADER */
@@ -56,7 +56,6 @@ header{
     display: block;
     background: var(--gradient);
     box-shadow: 0 2px 3px #444;
-    white-space: 10rem;
 }
 
 /* HEADING */
@@ -126,34 +125,35 @@ header .navbar{
 
 /* About section */
 .about{
-    background: url('../images/about_atayev.JPG');
-    background-position: center bottom;
+    background-color: var(--mainColor);
+    /* background: url('../images/about_atayev.JPG'); */
+    background-position: center center;
     background-size: cover;
     background-attachment: local;
     background-repeat: no-repeat;
-    height: 150vh;
-    margin-top: 15vh;
-    position: relative;
+    height: 120vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 .content{
-    position: absolute;
-    top: 13%;
-    left: 11%;
     width: 40%;
+    margin: 0 0 0 7vw;
 }
 .content h1{
-    font-size: 8rem;
+    font-size: 7rem;
     text-transform: uppercase;
-    letter-spacing: 5px;
-    font-family: 'Neucha', cursive;
+    letter-spacing: 1rem;
+    font-family: 'Yeseva One', sans-serif;
+    color: var(--mainWhite);
+    text-shadow: 1px 1px 5px var(--colorTwo);
 }
 .content p{
-    font-size: 2rem;
+    color: var(--colorTwo);
+    font-size: 3rem;
     text-transform: uppercase;
-    margin-top: 4rem;
+    margin-top: 2.5rem;
     letter-spacing: 2px;
-    padding-right: 5rem;
-    width: 80%;
     text-align: left;
 }
 .content a{
@@ -162,15 +162,21 @@ header .navbar{
     background-color: var(--mainWhite);
     border-radius: 15px;
     color: var(--mainColor);
-    margin-top: 4rem;
+    margin-top: 3rem;
     font-weight: bold;
     text-decoration: none;
     outline: none;
+    border: none;
 }
 .content a:hover{
     color: var(--mainWhite);
     background-color: var(--mainColor);
-    box-shadow: 0 5px 8px #ccc;
+    box-shadow: 
+    0 0 16px 0 rgba(255, 255, 255, 0.3),
+    inset 0 0 5px 0 rgba(255, 255, 255, 0.3);
+}
+.content a:active{
+    color: var(--colorTwo);
 }
 
 
@@ -194,6 +200,7 @@ header .navbar{
     width: 100%;
     padding: 1rem;
     border-bottom: 1px solid var(--mainWhite);
+    color: var(--mainWhite);
 }
 .countries .timeline-container{
     padding: 0 5%;
@@ -217,7 +224,7 @@ header .navbar{
     border-radius: 0px 20px 20px 20px;
 }
 .countries .timeline:hover{
-    box-shadow: 6px 8px 8px var(--mainWhite);
+    box-shadow: 2px 3px 3px var(--mainWhite);
 }
 .countries .timeline:hover::after{
     background-color: var(--mainColor);
@@ -227,6 +234,7 @@ header .navbar{
     top: -25px;
     font-size: 1.5rem;
     font-style: italic;
+    color: var(--mainWhite);
 }
 .countries .timeline::after{
     content: '';
@@ -247,12 +255,19 @@ header .navbar{
     font-size: 1.5rem;
     font-style: italic;
     margin: 0;
+    color: var(--mainWhite);
 }
 .countries .timeline-content .t-title{
     font-size: 2.5rem;
+    color: rgb(243, 201, 124);
 }
 .countries .timeline-content .t-location{
     font-size: 2rem;
+    color: var(--mainWhite);
+}
+.countries .timeline-content .t-location i{
+    margin-right: 0.5rem;
+    color: var(--colorTwo);
 }
 
 
@@ -320,11 +335,24 @@ header .navbar{
         font-size: 1.3rem;
         padding: 1rem 0.75rem;
     }
-    .about{
-        margin-top: 14vh;
-    }
     .countries .timeline{
         width: 65%;
+    }
+    .dropdown:hover>.dropdown-menu {
+        display: none;
+    }
+    header .navbar{
+        display: none;
+    }
+
+    header .navbar.active{
+        display: block;
+    }
+    header .navbar.active a{
+        font-size: 2rem;
+    }
+    header .navbar li {
+        margin: 1rem 0;
     }
 }
 @media (max-width: 768px) {
@@ -344,11 +372,27 @@ header .navbar{
         display: none;
     }
     .about{
-        margin-top: 10vh;
+        align-items: flex-end;
+        padding-bottom: 25vh;
     }
     .content{
-        top: 10%;
-        width: 70%;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .content h1{
+        font-size: 8rem;
+        text-align: center;
+        width: 100%;
+    }
+    .content p{
+        width: 100%;
+        font-size: 3rem;
+        margin-top: 2rem;
+        text-align: center;
+        padding: 0;
     }
     .countries{
         background: var(--mainColor);
@@ -362,21 +406,33 @@ header .navbar{
     }
 }
 @media (max-width: 480px) {
+    html{
+        font-size: 50%;
+    }
     .content{
-        top: 12%;
-        width: 80%;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .content h1{
         font-size: 8rem;
+        text-align: center;
     }
     .content p{
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-top: 3rem;
+        text-align: center;
+        padding: 0;
     }
     .content a{
         margin-top: 3rem;
     }
     .about{
         background-position: -75rem 0;
+    }
+    .footer .box-container .box{
+        width: 100%;
     }
 }
