@@ -40,6 +40,7 @@
     border-radius: 1.5rem;
     font-size: 1.5rem;
     background-color: #222222;
+    color: #000000;
 }
 .contacts-form input::placeholder{
     color: #ffffff;

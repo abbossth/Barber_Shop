@@ -1,5 +1,5 @@
 .online_courses{
-    padding: 18vh 0;
+    padding: 18vh 0 5vh 0;
 }
 .online_courses h1{
     color: #fff;
@@ -13,4 +13,42 @@
     padding: 1rem;
     border-bottom: 1px solid var(--mainWhite);
     color: var(--mainWhite);
+}
+.online_courses .card{
+    /* border: none; */
+    background: var(--footerBg);
+    color: white;
+    box-shadow: 0 2px 2px #909090;
+}
+.online_courses .card:hover{
+    box-shadow: 0 4px 8px #909090;
+}
+.online_courses .card .card-title{
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.online_courses .card .card-text{
+    font-size: 1.5rem;
+}
+.online_courses .card i{
+    font-size: 1.25rem;
+    letter-spacing: 3px;
+    color: rgb(250, 206, 110);
+}
+.online_courses .card .price{
+    font-size: 2rem;
+    text-align: right;
+}
+.online_courses .card .price .p-amount{
+    margin-right: 5px;
+    font-weight: 650;
+}
+.online_courses .card .price i{
+    font-size: 2rem;
+}
+.online_courses .card hr{
+    background-color: #fff;
 }
