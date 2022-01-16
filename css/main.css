@@ -124,10 +124,9 @@ header .navbar{
 
 /* About section */
 .about{
-    /* background: url('../images/about_atayev.JPG'); */
-    background-position: center center;
+    background: url('../images/about_atayev.JPG');
+    background-position: center 12vh;
     background-size: cover;
-    background-attachment: local;
     background-repeat: no-repeat;
     height: 120vh;
     display: flex;
@@ -358,6 +357,9 @@ header .navbar{
     }
 }
 @media (max-width: 768px) {
+    section{
+        padding: 0;
+    }
     html{
         font-size: 58%;
     }
@@ -375,7 +377,9 @@ header .navbar{
     }
     .about{
         align-items: flex-end;
-        padding-bottom: 25vh;
+        padding: 0 0 20vh 0;
+        background-position: -80vh 10vh;
+
     }
     .content{
         width: 100%;
@@ -383,6 +387,8 @@ header .navbar{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        background: linear-gradient(0deg, rgba(0,0,0,0.1),rgba(0,0,0,0.3),rgba(0,0,0,0.7),rgba(0,0,0,0.4),rgba(0,0,0,0.1));
+        padding: 3vh 1vh;
     }
     .content h1{
         font-size: 7rem;
@@ -411,12 +417,17 @@ header .navbar{
     html{
         font-size: 50%;
     }
+    .about{
+        background-position: -90vh 10vh;
+    }
     .content{
         width: 100%;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        background: linear-gradient(0deg, rgba(0,0,0,0.1),rgba(0,0,0,0.3),rgba(0,0,0,0.7),rgba(0,0,0,0.4),rgba(0,0,0,0.1));
+        padding: 3vh 1vh;
     }
     .content h1{
         font-size: 6rem;
@@ -430,9 +441,6 @@ header .navbar{
     }
     .content a{
         margin-top: 3rem;
-    }
-    .about{
-        background-position: -75rem 0;
     }
     .footer .box-container .box{
         width: 100%;
